@@ -1,141 +1,127 @@
-Here’s a README template for your GitHub tool UrlInspector with a cool animation display using CodePen-style animations:
+Here’s a README for your GitHub tool UrlInspector, designed to retrieve details from the given link "https://github.com/Riotous-web/UrlInspector.git", with a cool output display and animation for showing results:
 
-UrlInspector 🔍
+UrlInspector 🕵️‍♂️🔍
 
-Welcome to UrlInspector – the ultimate URL analysis and inspection tool for developers, security experts, and website administrators. UrlInspector helps you gather vital information about any URL, from HTTP status codes to metadata, links, and page titles.
+UrlInspector is a powerful tool designed to inspect and retrieve key information from any given URL. It fetches the HTTP status code, headers, title, meta information, and all links from a website. With a built-in cool animation display, UrlInspector makes the process of inspecting websites both fun and informative!
 
-🚀 What is UrlInspector?
+🚀 Features
 
-UrlInspector is a powerful Python-based tool that performs a comprehensive analysis of websites and URLs. It provides key information such as:
- • Scan Date: When the URL was inspected.
- • Status Code: HTTP status code (e.g., 200, 404, etc.).
- • Headers: All response headers.
- • Title: The <title> of the webpage.
- • Meta: Meta tags, including description and keywords.
- • Links: Extracts all hyperlinks from the page.
+ • scan_date: Get the exact time when the URL was scanned.
+ • status_code: Retrieves the HTTP status code of the website (e.g., 200, 404, etc.).
+ • headers: Shows the headers sent by the web server.
+ • title: Extracts the <title> tag of the page.
+ • meta: Retrieves the meta description and keywords.
+ • links: Extracts all hyperlinks (URLs) from the page.
 
-🛠️ Functions
+🌐 How to Use
 
-scan_date
+To inspect any URL, follow these simple steps:
 
-Captures the date and time when the URL was inspected.
+1. Clone the repository:
 
-status_code
-
-Fetches the HTTP status code returned by the server (e.g., 200 for success, 404 for not found, etc.).
-
-headers
-
-Displays all headers sent by the server in response to the request.
-
-title
-
-Extracts the title of the webpage (the content inside the <title> tag).
-
-meta
-
-Fetches meta tags such as description, keywords, and author.
-
-links
-
-Lists all links found on the page, including internal and external links.
-
-🔧 How to Use
-
- 1. Clone this repository to your local machine:
-
-git clone https://github.com/yourusername/UrlInspector.git
+git clone https://github.com/Riotous-web/UrlInspector.git
 cd UrlInspector
 
- 2. Install dependencies:
+2. Install the dependencies:
 
 pip install -r requirements.txt
 
- 3. Run UrlInspector on a URL:
+3. Run the UrlInspector tool:
 
-python urlinspector.py --url <your-website-url>
+python urlinspector.py --url https://github.com/Riotous-web/UrlInspector.git
 
- 4. See detailed output about the URL!
+This will retrieve all relevant details from the GitHub URL and show the results.
 
-🎨 Animation Display (UrlInspector Results)
+🖥️ Example Output with Animation
 
-Check out this animation to visualize how UrlInspector performs the analysis!
+Once the scan is complete, UrlInspector will display the following details in a dynamic and interactive format:
 
-[====================] 100% Analyzing: https://example.com
-[🔍] Inspecting URL...
-[🕒] Scan Date: 2024-11-12 14:35:09
-[✅] Status Code: 200 OK
-[📝] Title: "Example Domain"
-[🔑] Meta Description: "This domain is established to be used for illustrative examples in documents."
-[🔗] Links found:
-    - https://www.iana.org/domains/example
-    - https://example.com/about
-[⚙️] Headers:
-    - Content-Type: text/html; charset=UTF-8
-    - Server: Apache
-    - Content-Length: 1256
-[📊] Complete! Results saved to: /reports/example.com_report.html
+[====================] 0% Scanning: https://github.com/Riotous-web/UrlInspector.git
+[🕵️‍♂️] Scan Date: 2024-11-12 14:23:45
+[🔗] Status Code: 200 OK
+[📝] Title: UrlInspector – GitHub Repository
+[🔑] Meta Description: A Python tool to inspect and analyze URLs, providing details like status codes, headers, titles, and links.
+[⚙️] Meta Keywords: Python, URL Inspector, Website Scanner
+[🔍] Headers:
+  - Content-Type: text/html; charset=utf-8
+  - Server: GitHub.com
+  - Date: Mon, 12 Nov 2024 14:23:45 GMT
+[🔗] Links Found:
+  - https://github.com/Riotous-web/UrlInspector
+  - https://github.com/Riotous-web
+  - https://github.com
 
-Here’s how you can envision the results displayed like a cool animation:
+The animation starts with a progress bar, followed by each result appearing in real time with a smooth, visually appealing display.
 
-<!-- CodePen-like Animation Display Example -->
-<div class="animation-container">
-  <div class="line">[====================] 100% Analyzing: <span class="url">https://example.com</span></div>
-  <div class="line">[🔍] Inspecting URL...</div>
-  <div class="line">[🕒] Scan Date: <span class="result">2024-11-12 14:35:09</span></div>
-  <div class="line">[✅] Status Code: <span class="result">200 OK</span></div>
-  <div class="line">[📝] Title: <span class="result">"Example Domain"</span></div>
-  <div class="line">[🔑] Meta Description: <span class="result">"This domain is established to be used for illustrative examples in documents."</span></div>
-  <div class="line">[🔗] Links found:</div>
-  <div class="line">    - <span class="link">https://www.iana.org/domains/example</span></div>
-  <div class="line">    - <span class="link">https://example.com/about</span></div>
-  <div class="line">[⚙️] Headers:</div>
-  <div class="line">    - Content-Type: text/html; charset=UTF-8</div>
-  <div class="line">    - Server: Apache</div>
-  <div class="line">    - Content-Length: 1256</div>
-  <div class="line">[📊] Complete! Results saved to: <span class="result">/reports/example.com_report.html</span></div>
-</div>
+🛠️ Available Functions
 
-<style>
-  .animation-container {
-    font-family: monospace;
-    color: #2e2e2e;
-    padding: 20px;
-  }
-  .line {
-    animation: fadeIn 2s ease-in-out;
-    margin-bottom: 8px;
-  }
-  .url, .result, .link {
-    font-weight: bold;
-    color: #4CAF50;
-  }
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-</style>
+1. scan_date
 
-This simple CodePen-inspired animation mimics the look of a live terminal or console as the tool runs and displays results.
-🌐 Contributing
+ • Retrieves the exact time when the website was scanned.
+ • Example: 2024-11-12 14:23:45
 
-Feel free to contribute to UrlInspector by forking the repository, fixing bugs, or adding new features. Please refer to our contributing guide for more details.
+2. status_code
 
-📜 License
+ • Retrieves the HTTP status code of the website (e.g., 200 OK, 404 Not Found, 301 Moved Permanently).
+ • Example: 200 OK
 
-UrlInspector is open-source and available under the MIT License. See LICENSE for more details.
+3. headers
 
-🤝 Let’s Connect
+ • Displays the HTTP headers returned by the web server.
+ • Example:
 
-Follow us for updates, new features, and support:
- • Twitter: @UrlInspectorTool (https://twitter.com/UrlInspectorTool)
- • GitHub: UrlInspector on GitHub (https://github.com/yourusername/UrlInspector)
+- Content-Type: text/html; charset=UTF-8
+- Server: GitHub.com
 
- “Inspect the web, protect your assets.” 🔍
 
-Notes:
 
- • The animation code above is just a simple example of how you could implement an animated output on your website or terminal. You can enhance it using libraries like animate.css or JavaScript-based animations for a richer experience.
- • The provided results are illustrative; adjust them to match the actual output format your tool generates.
+4. title
 
-Let me know if you need further assistance with this!
+ • Retrieves the <title> tag of the page.
+ • Example: UrlInspector – GitHub Repository
+
+5. meta
+
+ • Retrieves the meta description and keywords from the page.
+ • Example:
+
+Meta Description: A Python tool to inspect and analyze URLs, providing details like status codes, headers, titles, and links.
+Meta Keywords: Python, URL Inspector, Website Scanner
+
+
+
+6. links
+
+ • Extracts and displays all links (URLs) found on the page.
+ • Example:
+
+- https://github.com/Riotous-web/UrlInspector
+- https://github.com/Riotous-web
+- https://github.com
+
+🖼️ Cool Animation Display
+
+The scan process is visually enhanced with a cool animation showing a progress bar while UrlInspector retrieves data.
+
+Here’s an example of the progress bar animation:
+
+import time
+import sys
+
+def animate_scan():
+    print("[====================] 0% Scanning: https://github.com/Riotous-web/UrlInspector.git")
+    for i in range(1, 101):
+        sys.stdout.write(f"\r[{'=' * (i // 2)}{' ' * (50 - i // 2)}] {i}% Scanning: https://github.com/Riotous-web/UrlInspector.git")
+        sys.stdout.flush()
+        time.sleep(0.05)  # Simulate time delay for scanning
+    print("\nScan complete! Now fetching results...")
+
+animate_scan()
+
+This simple script simulates a progress bar while the scan is running, creating a dynamic user experience.
+
+🔧 Installation
+
+ 1. Clone the repository:
+
+git clone https://github.com/Riotous-web/UrlInspector.git

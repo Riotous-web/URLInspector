@@ -1,127 +1,139 @@
-Here’s a README for your GitHub tool UrlInspector, designed to retrieve details from the given link "https://github.com/Riotous-web/UrlInspector.git", with a cool output display and animation for showing results:
+URLInspector - README
 
-UrlInspector 🕵️‍♂️🔍
+Welcome to URLInspector! 🔍 This powerful tool is designed to provide detailed insights into any URL, allowing you to analyze key elements of a website. Whether you’re a developer, SEO professional, or simply curious about a webpage, URLInspector is here to help you get the information you need quickly and efficiently.
 
-UrlInspector is a powerful tool designed to inspect and retrieve key information from any given URL. It fetches the HTTP status code, headers, title, meta information, and all links from a website. With a built-in cool animation display, UrlInspector makes the process of inspecting websites both fun and informative!
+Features 🛠️
 
-🚀 Features
+🗓️ scan_date
 
- • scan_date: Get the exact time when the URL was scanned.
- • status_code: Retrieves the HTTP status code of the website (e.g., 200, 404, etc.).
- • headers: Shows the headers sent by the web server.
- • title: Extracts the <title> tag of the page.
- • meta: Retrieves the meta description and keywords.
- • links: Extracts all hyperlinks (URLs) from the page.
+The scan_date function returns the date and time when the URL was last inspected. It helps you keep track of when the website data was last fetched, which is especially important for ensuring that the information is up-to-date.
 
-🌐 How to Use
+Example:
 
-To inspect any URL, follow these simple steps:
+print(inspector.scan_date())  
+# Output: 2024-11-12 10:00 AM
 
-1. Clone the repository:
+🚦 status_code
 
-git clone https://github.com/Riotous-web/UrlInspector.git
-cd UrlInspector
+The status_code function provides the HTTP status code for the URL. This is a standard way of indicating the result of the server’s attempt to fulfill a request. Common codes include:
+ • 200: Success ✅
+ • 404: Not Found ❌
+ • 500: Server Error 🔴
 
-2. Install the dependencies:
+Example:
 
-pip install -r requirements.txt
+print(inspector.status_code())  
+# Output: 200 OK
 
-3. Run the UrlInspector tool:
+📑 headers
 
-python urlinspector.py --url https://github.com/Riotous-web/UrlInspector.git
+The headers function fetches the HTTP headers from the website, which contain essential information about the page, like the content type, server details, and caching settings. This is a valuable resource for web developers and SEO experts.
 
-This will retrieve all relevant details from the GitHub URL and show the results.
+Example:
 
-🖥️ Example Output with Animation
+print(inspector.headers())  
+# Output: 
+# {
+#   'Content-Type': 'text/html; charset=UTF-8',
+#   'Server': 'Apache/2.4.41',
+#   'Cache-Control': 'no-cache'
+# }
 
-Once the scan is complete, UrlInspector will display the following details in a dynamic and interactive format:
+🏷️ title
 
-[====================] 0% Scanning: https://github.com/Riotous-web/UrlInspector.git
-[🕵️‍♂️] Scan Date: 2024-11-12 14:23:45
-[🔗] Status Code: 200 OK
-[📝] Title: UrlInspector – GitHub Repository
-[🔑] Meta Description: A Python tool to inspect and analyze URLs, providing details like status codes, headers, titles, and links.
-[⚙️] Meta Keywords: Python, URL Inspector, Website Scanner
-[🔍] Headers:
-  - Content-Type: text/html; charset=utf-8
-  - Server: GitHub.com
-  - Date: Mon, 12 Nov 2024 14:23:45 GMT
-[🔗] Links Found:
-  - https://github.com/Riotous-web/UrlInspector
-  - https://github.com/Riotous-web
-  - https://github.com
+The title function retrieves the <title> tag from the webpage’s HTML. This tag defines the title of the webpage as it appears on the browser tab and is often used by search engines for ranking and display purposes.
 
-The animation starts with a progress bar, followed by each result appearing in real time with a smooth, visually appealing display.
+Example:
 
-🛠️ Available Functions
+print(inspector.title())  
+# Output: Example Domain
 
-1. scan_date
+📝 meta
 
- • Retrieves the exact time when the website was scanned.
- • Example: 2024-11-12 14:23:45
+The meta function extracts the metadata from the page’s HTML, including the meta description, keywords, and other SEO-related tags. Meta tags are crucial for search engines to understand the content and context of the page.
 
-2. status_code
+Example:
 
- • Retrieves the HTTP status code of the website (e.g., 200 OK, 404 Not Found, 301 Moved Permanently).
- • Example: 200 OK
+print(inspector.meta())  
+# Output: 
+# {
+#   'description': 'This domain is for use in illustrative examples in documents.',
+#   'keywords': 'example, domain, test'
+# }
 
-3. headers
+🔗 link
 
- • Displays the HTTP headers returned by the web server.
- • Example:
+The link function collects all the internal and external hyperlinks on the webpage. This is useful for analyzing the structure of the site and for finding any broken or missing links.
 
-- Content-Type: text/html; charset=UTF-8
-- Server: GitHub.com
+Example:
 
+print(inspector.links())  
+# Output:
+# [
+#   'https://example.com/about',
+#   'https://example.com/contact',
+#   'https://external-site.com'
+# ]
 
+Example Output 📊
 
-4. title
+Here’s what the output might look like when you run URLInspector:
 
- • Retrieves the <title> tag of the page.
- • Example: UrlInspector – GitHub Repository
+URL: https://example.com
 
-5. meta
+🗓️ Scan Date: 2024-11-12 10:00 AM
+🚦 Status Code: 200 OK
+📑 Title: Example Domain
+📝 Meta Description: This domain is for use in illustrative examples in documents.
+🔗 Links:
+  - https://example.com/about
+  - https://example.com/contact
+  - https://external-site.com
 
- • Retrieves the meta description and keywords from the page.
- • Example:
+Installation 🚀
 
-Meta Description: A Python tool to inspect and analyze URLs, providing details like status codes, headers, titles, and links.
-Meta Keywords: Python, URL Inspector, Website Scanner
+To get started with URLInspector, you can clone the repository and install the dependencies. Here’s how to do it:
 
+git clone https://github.com/Riotous-web/URLInspector.git
 
+cd URLInspector
 
-6. links
+pip3 install -r requirements.txt
 
- • Extracts and displays all links (URLs) found on the page.
- • Example:
+Usage 📘
 
-- https://github.com/Riotous-web/UrlInspector
-- https://github.com/Riotous-web
-- https://github.com
+Once installed, you can use URLInspector in your Python project by importing it and calling the various functions.
 
-🖼️ Cool Animation Display
+Example usage:
 
-The scan process is visually enhanced with a cool animation showing a progress bar while UrlInspector retrieves data.
+from urlinspector import URLInspector
 
-Here’s an example of the progress bar animation:
+url = "https://example.com"
+inspector = URLInspector(url)
 
-import time
-import sys
+print(inspector.scan_date())  # Outputs scan date
+print(inspector.status_code())  # Outputs status code
+print(inspector.headers())  # Outputs headers
+print(inspector.title())  # Outputs title tag
+print(inspector.meta())  # Outputs meta data
+print(inspector.links())  # Outputs list of links
 
-def animate_scan():
-    print("[====================] 0% Scanning: https://github.com/Riotous-web/UrlInspector.git")
-    for i in range(1, 101):
-        sys.stdout.write(f"\r[{'=' * (i // 2)}{' ' * (50 - i // 2)}] {i}% Scanning: https://github.com/Riotous-web/UrlInspector.git")
-        sys.stdout.flush()
-        time.sleep(0.05)  # Simulate time delay for scanning
-    print("\nScan complete! Now fetching results...")
+Contributing 🤝
 
-animate_scan()
+We welcome contributions to improve URLInspector! If you’d like to contribute:
+ 1. Fork the repository
+ 2. Create a new branch (git checkout -b feature-name)
+ 3. Make your changes
+ 4. Commit your changes (git commit -am 'Add new feature')
+ 5. Push to your branch (git push origin feature-name)
+ 6. Open a Pull Request
 
-This simple script simulates a progress bar while the scan is running, creating a dynamic user experience.
+License 📄
 
-🔧 Installation
+URLInspector is open-source software licensed under the MIT License. Feel free to modify and share!
 
- 1. Clone the repository:
+Support 🛠️
 
-git clone https://github.com/Riotous-web/UrlInspector.git
+If you have any issues, questions, or suggestions, feel free to open an issue in the GitHub repository or contact the maintainers.
+
+Happy inspecting! 🌐🕵️‍♀️

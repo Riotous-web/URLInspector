@@ -1,160 +1,138 @@
 URLInspector - README
 
-Welcome to URLInspector! 🌐🔍 A simple yet powerful tool designed for inspecting and analyzing key aspects of any URL you provide. Whether you’re a developer, SEO specialist, or just want to gather essential information about a webpage, URLInspector will help you dig deeper and get all the data you need in a clean and easy-to-understand format.
+Welcome to URLInspector! 🌐🔍 This powerful tool allows you to analyze and inspect various aspects of any given URL. Whether you’re a web developer, SEO enthusiast, or simply curious about a webpage, URLInspector provides key insights into the status and structure of a website.
 
-🛠️ Key Features
+Features
+
+URLInspector offers several features to help you assess the health and structure of any webpage. Below are the core functions provided by the tool:
 
 🗓️ scan_date
 
-The scan_date function provides the exact timestamp of when the URL was scanned. This is particularly useful for tracking when a webpage was last analyzed, ensuring that your data is up-to-date.
+The scan_date function records the exact date and time when the URL was scanned. This helps keep track of when the webpage data was last checked, ensuring that you’re always working with the most current information.
 
 Example:
 
-inspector.scan_date()
-
-:Output: "2024-11-12 10:00 AM"
+Scan Date: 2024-11-12 10:00 AM
 
 🚦 status_code
 
-The status_code function retrieves the HTTP status code from the URL, giving you an indication of the webpage’s health. Common status codes include:
- • 200 OK: The page is working fine.
- • 404 Not Found: The page doesn’t exist.
+The status_code function retrieves the HTTP status code from the website’s server. It tells you the state of the webpage — whether it’s accessible, down, or if there’s an error.
+ • 200 OK: The page is successfully loaded.
+ • 404 Not Found: The page could not be found.
  • 500 Internal Server Error: There’s an issue with the server.
 
 Example:
 
-inspector.status_code()
-
-:Output: "200 OK"
+Status Code: 200 OK
 
 📑 headers
 
-The headers function returns all HTTP headers associated with the URL. Headers contain important metadata such as content type, caching information, and server details. This information can help developers and webmasters diagnose issues or optimize the website’s performance.
+The headers function fetches the HTTP headers sent by the server when the webpage is requested. HTTP headers include useful information such as the content type, server, cache control, and more. Understanding headers is crucial for diagnosing web-related issues and ensuring optimal website performance.
 
 Example:
 
-inspector.headers()
-:Output:
-:{
-:   "Content-Type": "text/html; charset=UTF-8",
-:   "Server": "Apache",
-:   "Cache-Control": "no-cache"
-:}
+Headers:
+  - Content-Type: text/html; charset=UTF-8
+  - Server: Apache
+  - Cache-Control: no-cache
 
 🏷️ title
 
-The title function extracts the <title> tag of the webpage, which appears in the browser’s tab and serves as a key SEO element. It’s essential for understanding the context of the page content at a glance.
+The title function retrieves the title of the webpage from the HTML <title> tag. This is the title shown in the browser tab and is also crucial for SEO, as search engines use it to understand the content of a page.
 
 Example:
 
-inspector.title()
-:Output: "Example Domain"
+Title: Example Domain
 
 📝 meta
 
-The meta function pulls all meta tags from the HTML source, such as the page description, keywords, and other metadata that affect search engine ranking and how the page is represented on social media.
+The meta function extracts the meta tags from the HTML <head> section. These tags contain metadata about the webpage, such as the description, keywords, and author. Meta tags are important for SEO and social media sharing.
 
 Example:
 
-inspector.meta()
-:Output:
-:{
-:   "description": "This domain is for use in illustrative examples in documents.",
-:   "keywords": "example, demo, test"
-:}
+Meta Description: This domain is for use in illustrative examples in documents.
+Meta Keywords: example, domain, web, tutorial
 
 🔗 link
 
-The link function returns all internal and external links found on the webpage. This feature helps you analyze the structure of the page’s links, find broken or outdated URLs, and identify areas for improvement in terms of navigation and SEO.
+The link function retrieves all the internal and external links found on the webpage. This allows you to identify the connections between pages within the same site or external resources linked from the page. It’s a great way to check for broken or dead links.
 
 Example:
 
-inspector.links()
-:Output:
-:[
-:   "https://example.com/about",
-:   "https://example.com/contact",
-:   "https://external-site.com"
-: ]
+Links:
+  - https://example.com/about
+  - https://example.com/contact
+  - https://external-site.com
 
-🖥️ Example Usage
+Example Output
+
+Here’s an example of what the output might look like when you run URLInspector on a website:
+
+URL: https://example.com
+
+📅 Scan Date: 2024-11-12 10:00 AM
+🚦 Status Code: 200 OK
+📑 Title: Example Domain
+📝 Meta Description: This domain is for use in illustrative examples in documents.
+🔗 Links:
+  - https://example.com/about
+  - https://example.com/contact
+  - https://external-site.com
+
+Installation
+
+To install URLInspector, follow these simple steps:
+ 1. Clone the repository from GitHub.
+ 2. Install the required dependencies using pip.
+
+git clone https://github.com/Riotous-web/URLInspector.git
+
+cd URLInspector
+
+pip3 install -r requirements.txt
+
+Usage
+
+After installation, you can use URLInspector via command line or in your Python project. Here’s how you can inspect a URL:
 
 from urlinspector import URLInspector
 
-URL to inspect
+# Initialize the inspector with a URL
 url = "https://example.com"
-
-Initialize URLInspector with the URL
 inspector = URLInspector(url)
 
-Retrieve and display the inspection data
-print("Scan Date:", inspector.scan_date())   # 🗓️
-print("Status Code:", inspector.status_code())  # 🚦
-print("Headers:", inspector.headers())      # 📑
-print("Title:", inspector.title())          # 🏷️
-print("Meta:", inspector.meta())            # 📝
-print("Links:", inspector.links())          # 🔗
+# Fetch details about the URL
+print(inspector.scan_date())      # Shows scan date and time
+print(inspector.status_code())    # Shows HTTP status code
+print(inspector.headers())        # Displays HTTP headers
+print(inspector.title())          # Displays page title
+print(inspector.meta())           # Displays meta tags
+print(inspector.links())          # Displays internal and external links
 
 Example Output:
 
 Scan Date: 2024-11-12 10:00 AM
 Status Code: 200 OK
-Headers: 
-{
-  "Content-Type": "text/html; charset=UTF-8",
-  "Server": "Apache",
-  "Cache-Control": "no-cache"
-}
 Title: Example Domain
-Meta: 
-{
-  "description": "This domain is for use in illustrative examples in documents.",
-  "keywords": "example, demo, test"
-}
-Links: 
-[
-  "https://example.com/about",
-  "https://example.com/contact",
-  "https://external-site.com"
-]
+Meta Description: This domain is for use in illustrative examples in documents.
+Links:
+  - https://example.com/about
+  - https://example.com/contact
+  - https://external-site.com
 
-⚙️ Installation
+Contributing
 
-To get started with URLInspector, you need to clone the repository and install the required dependencies. Here’s how to set it up:
- 1. Clone the repository:
+We welcome contributions to enhance URLInspector! If you find any bugs or have suggestions for new features, feel free to fork the repository, make your changes, and submit a pull request. Together, we can improve this tool for everyone. 🚀
 
-git clone https://github.com/Riotous-web/URLInspector.git
+How to Contribute:
 
+ 1. Fork the repository
+ 2. Create a new branch
+ 3. Make your changes
+ 4. Submit a pull request with a description of what you’ve done
 
- 2. Navigate to the project directory:
+License
 
-cd URLInspector
+URLInspector is open-source and licensed under the MIT License. See the LICENSE file for more details.
 
-
- 3. Install dependencies:
-
-pip3 install -r requirements.txt
-
-💡 Why Use URLInspector?
-
- • SEO Optimization: Quickly check if a webpage’s title, meta tags, and headers are optimized for search engines.
- • Website Monitoring: Track the health and performance of websites by monitoring status codes, links, and headers.
-
- • Developer Debugging: Analyze headers and metadata to troubleshoot issues with web pages or servers.
-
-🤝 Contributing
-
-We welcome contributions to URLInspector! If you’d like to contribute, please follow these steps:
- 1. Fork the repository.
- 2. Create a new branch (git checkout -b feature-branch).
- 3. Commit your changes (git commit -am 'Add new feature').
- 4. Push to the branch (git push origin feature-branch).
- 5. Submit a pull request.
-
-Let’s work together to make web inspection easier for everyone! 💪
-
-📝 License
-
-URLInspector is open-source software licensed under the MIT License.
-
-Happy inspecting! 🌐🔍
+Thank you for using URLInspector! 🚀 Happy inspecting! 👨‍💻👩‍💻

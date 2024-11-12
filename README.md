@@ -11,7 +11,8 @@ The scan_date function provides the exact timestamp of when the URL was scanned.
 Example:
 
 inspector.scan_date()
-# Output: "2024-11-12 10:00 AM"
+
+Output: "2024-11-12 10:00 AM"
 
 🚦 status_code
 
@@ -23,7 +24,8 @@ The status_code function retrieves the HTTP status code from the URL, giving you
 Example:
 
 inspector.status_code()
-# Output: "200 OK"
+
+Output: "200 OK"
 
 📑 headers
 
@@ -32,12 +34,12 @@ The headers function returns all HTTP headers associated with the URL. Headers c
 Example:
 
 inspector.headers()
-# Output:
-# {
-#   "Content-Type": "text/html; charset=UTF-8",
-#   "Server": "Apache",
-#   "Cache-Control": "no-cache"
-# }
+Output:
+ {
+   "Content-Type": "text/html; charset=UTF-8",
+   "Server": "Apache",
+   "Cache-Control": "no-cache"
+ }
 
 🏷️ title
 
@@ -46,7 +48,7 @@ The title function extracts the <title> tag of the webpage, which appears in the
 Example:
 
 inspector.title()
-# Output: "Example Domain"
+Output: "Example Domain"
 
 📝 meta
 
@@ -55,11 +57,11 @@ The meta function pulls all meta tags from the HTML source, such as the page des
 Example:
 
 inspector.meta()
-# Output:
-# {
-#   "description": "This domain is for use in illustrative examples in documents.",
-#   "keywords": "example, demo, test"
-# }
+Output:
+ {
+   "description": "This domain is for use in illustrative examples in documents.",
+   "keywords": "example, demo, test"
+ }
 
 🔗 link
 
@@ -68,12 +70,12 @@ The link function returns all internal and external links found on the webpage. 
 Example:
 
 inspector.links()
-# Output:
-# [
-#   "https://example.com/about",
-#   "https://example.com/contact",
-#   "https://external-site.com"
-# ]
+Output:
+ [
+   "https://example.com/about",
+   "https://example.com/contact",
+   "https://external-site.com"
+ ]
 
 🖥️ Example Usage
 

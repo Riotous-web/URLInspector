@@ -79,7 +79,7 @@ Example:
 
 def display_author():
     """Display author information."""
-    print("SiteSleuth\nAuthor: Vex\nContact: vex@fortinet.com")
+    print("SiteSleuth Tool\nAuthor: Vex\nContact: vex@fortinet.com")
 
 
 def main():

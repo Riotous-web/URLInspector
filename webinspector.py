@@ -62,7 +62,7 @@ SiteSleuth Tool
 --------------------
 
 Usage:
-    python webinspector.py -u <URL> [-o <OUTPUT_FILE>] [OPTIONS]
+    python3 webinspector.py -u <URL> [-o <OUTPUT_FILE>] [OPTIONS]
 
 Options:
     -u, --url         URL of the website to scan (required).
@@ -72,7 +72,7 @@ Options:
     -h, --help        Show this help message.
 
 Example:
-    python webinspector.py -u https://example.com -o results.json
+    python3 webinspector.py -u https://example.com -o results.json
     """
     print(help_message)
 

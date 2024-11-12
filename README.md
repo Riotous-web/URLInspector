@@ -97,11 +97,11 @@ After installation, you can use URLInspector via command line or in your Python 
 
 from urlinspector import URLInspector
 
-# Initialize the inspector with a URL
+#Initialize the inspector with a URL
 url = "https://example.com"
 inspector = URLInspector(url)
 
-# Fetch details about the URL
+#Fetch details about the URL
 print(inspector.scan_date())      # Shows scan date and time
 print(inspector.status_code())    # Shows HTTP status code
 print(inspector.headers())        # Displays HTTP headers
